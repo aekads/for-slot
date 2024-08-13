@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Data</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .edit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .edit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Playlists Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Playlist Name</th>
+        <th>Description</th>
+        <th>Screen IDs</th>
+        <% for (let i = 1; i <= 100; i++) { %>
+          <th>Slot <%= i %></th>
+          <th>Slot <%= i %> Update Time</th>
+          <th>Slot <%= i %> Delete Time</th>
+          <th>Slot <%= i %> Update Status</th>
+          <th>Slot <%= i %> Delete Status</th>
+        <% } %>
+        <th>Edit</th> <!-- New column for Edit button -->
+      </tr>
+    </thead>
+    <tbody>
+      <% playlists.forEach(playlist => { %>
+        <tr>
+          <td><%= playlist.id %></td>
+          <td><%= playlist.playlistname %></td>
+          <td><%= playlist.playlistdescription %></td>
+          <td><%= playlist.screen_id.join(', ') %></td>
+          <% for (let i = 1; i <= 100; i++) { %>
+            <td><%= playlist[`slot${i}`] %></td>
+            <td><%= playlist[`slot${i}_updatetime`] %></td>
+            <td><%= playlist[`slot${i}_deletetime`] %></td>
+            <td><%= playlist[`slot${i}_update_status`] %></td>
+            <td><%= playlist[`slot${i}_delete_status`] %></td>
+          <% } %>
+          <td>
+            <a href="/edit/<%= playlist.id %>">Edit</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h1>Screens Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <% for (let i = 1; i <= 5; i++) { %>
+          <th>Slot <%= i %></th>
+        <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% screens.forEach(screen => { %>
+        <tr>
+          <td><%= screen.id %></td>
+          <% for (let i = 1; i <= 5; i++) { %>
+            <td><%= screen[`slot${i}`] %></td>
+          <% } %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <script>
+    function editPlaylist(playlistId) {
+      // Redirect to the edit page with the playlist ID as a query parameter
+      window.location.href = `/edit?id=${playlistId}`;
+    }
+  </script>
+</body>
+</html>

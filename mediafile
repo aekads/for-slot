@@ -1,0 +1,41 @@
+CREATE SEQUENCE IF NOT EXISTS playlist12_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+CREATE TABLE IF NOT EXISTS public.playlist12
+(
+    id integer NOT NULL DEFAULT nextval('playlist12_id_seq'::regclass),
+    pname character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    pdescription text COLLATE pg_catalog."default",
+    screenid integer,
+    slot1 character varying(255) COLLATE pg_catalog."default",
+    slot1_updatetime timestamp without time zone,
+    slot1_deletetime timestamp without time zone,
+    update_status character varying(50) COLLATE pg_catalog."default" DEFAULT 'pending'::character varying,
+    delete_status character varying(50) COLLATE pg_catalog."default" DEFAULT 'pending'::character varying,
+    CONSTRAINT playlist12_pkey PRIMARY KEY (id),
+    CONSTRAINT playlist12_screenid_fkey FOREIGN KEY (screenid)
+        REFERENCES public.screens (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+
+CREATE SEQUENCE IF NOT EXISTS screens_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+CREATE TABLE IF NOT EXISTS public.screens
+(
+    id integer NOT NULL DEFAULT nextval('screens_id_seq'::regclass),
+    screenname character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    slot1 character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT screens_pkey PRIMARY KEY (id)
+)

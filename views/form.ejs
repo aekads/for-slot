@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <h1>Playlist Form</h1>
+  <form action="/submit" method="POST">
+    <label for="pname">Playlist Name:</label>
+    <input type="text" id="playlistname" name="playlistname" ><br><br>
+    <label for="pdescription">Description:</label>
+    <textarea id="playlistdescription" name="playlistdescription" ></textarea><br><br>
+    <label for="screenid">Screen IDs (comma separated):</label>
+    <input type="text" id="screenid" name="screenid" ><br><br>
+    <label for="layout_1">layout_1 (comma separated):</label>
+    <input type="text" id="layout_1" name="layout_1" ><br><br>
+    <% for (let i = 1; i <= 10; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+    
+
+
+
+
+
+
+
+    <label for="layout_2">layout_2 (comma separated):</label>
+    <input type="text" id="layout_2" name="layout_2" ><br><br>
+    <% for (let i = 11; i <= 20; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+
+
+    <label for="layout_3">layout_3 (comma separated):</label>
+    <input type="text" id="layout_3" name="layout_3" ><br><br>
+    <% for (let i = 21; i <= 30; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+
+    <label for="layout_4">layout_4 (comma separated):</label>
+    <input type="text" id="layout_4" name="layout_4" ><br><br>
+    <% for (let i = 31; i <= 40; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_5">layout_5 (comma separated):</label>
+    <input type="text" id="layout_5" name="layout_5" ><br><br>
+    <% for (let i = 41; i <= 50; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_6">layout_6 (comma separated):</label>
+    <input type="text" id="layout_6" name="layout_6" ><br><br>
+    <% for (let i = 51; i <= 60; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_7">layout_7 (comma separated):</label>
+    <input type="text" id="layout_7" name="layout_7" ><br><br>
+    <% for (let i = 61; i <= 70; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_8">layout_8 (comma separated):</label>
+    <input type="text" id="layout_8" name="layout_8" ><br><br>
+    <% for (let i = 71; i <= 80; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_9">layout_9 (comma separated):</label>
+    <input type="text" id="layout_9" name="layout_9" ><br><br>
+    <% for (let i = 81; i <= 90; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    <label for="layout_10">layout_10 (comma separated):</label>
+    <input type="text" id="layout_10" name="layout_10" ><br><br>
+    <% for (let i = 91; i <= 100; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{}"><br><br>
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" ><br><br>
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" ><br><br>
+    <% } %>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('form').addEventListener('submit', function(event) {
+on
+
+        // Get the form data
+        const pname = document.querySelector('#pname').value;
+        const pdescription = document.querySelector('#pdescription').value;
+        const screenid = document.querySelector('#screenid').value;
+
+        // Log the form data to the console
+        console.log('Playlist Name:', pname);
+        console.log('Description:', pdescription);
+        console.log('Screen IDs:', screenid);
+      });
+    });
+  </script>
+</body>
+</html>

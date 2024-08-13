@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Playlist</title>
+  <style>
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Edit Playlist</h1>
+  <form action="/update-playlist" method="post">
+    <input type="hidden" name="id" value="<%= playlist.id %>">
+
+    <label for="pname">Playlist Name:</label>
+    <input type="text" id="pname" name="pname" value="<%= playlist.playlistname %>" >
+
+    <label for="pdescription">Description:</label>
+    <textarea id="pdescription" name="pdescription" ><%= playlist.playlistdescription %></textarea>
+
+    <label for="screenid">Screen IDs (comma separated):</label>
+    <input type="text" id="screenid" name="screenid" 
+      value="<%= (playlist.screen_id && Array.isArray(playlist.screen_id) ? playlist.screen_id.join(', ') : '') %>" >
+
+    <% for (let i = 1; i <= 100; i++) { %>
+      <h3>Slot <%= i %></h3>
+      <label for="slot<%= i %>">Slot <%= i %>:</label>
+      <input type="text" id="slot<%= i %>" name="slot<%= i %>" value="{<%= playlist[`slot${i}`] %>}" >
+
+      <label for="slot<%= i %>_updatetime">Slot <%= i %> Update Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_updatetime" name="slot<%= i %>_updatetime" value="<%= playlist[`slot${i}_updatetime`] %>" >
+
+      <label for="slot<%= i %>_deletetime">Slot <%= i %> Delete Time:</label>
+      <input type="datetime-local" id="slot<%= i %>_deletetime" name="slot<%= i %>_deletetime" value="<%= playlist[`slot${i}_deletetime`] %>" >
+    <% } %>
+
+    <button type="submit">Save Changes</button>
+  </form>
+  <% for (let i = 1; i <= 5; i++) { %>
+  <script>
+    console.log("Playlist ID:", "<%= playlist.id %>");
+    console.log("Playlist Name:", "<%= playlist.pname %>");
+    console.log("Description:", "<%= playlist.pdescription %>");
+    console.log("Screen IDs:", "<%= playlist.screen_id.join(',') %>");
+ 
+      console.log("Slot <%= i %>:", "<%= playlist[`slot${i}`] %>");
+      console.log("Slot <%= i %> Update Time:", "<%= playlist[`slot${i}_updatetime`] %>");
+      console.log("Slot <%= i %> Delete Time:", "<%= playlist[`slot${i}_deletetime`] %>");
+
+  </script>    <% } %>
+</body>
+</html>
